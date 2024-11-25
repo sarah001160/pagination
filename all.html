@@ -12,7 +12,7 @@
 
 <body>
   <h1>分頁功能</h1>
-  <section id="vueApp">
+  <!-- <section id="vueApp">
     <div class="p-10">
       <p v-for="i in array">{{i}}</p>
       <div class="flex gap-4">
@@ -26,7 +26,19 @@
       </div>
     </div>
 
-  </section>
+  </section> -->
+  <div id="vueApp">
+    <div>
+      <ul>
+        <li v-for="item in paginatedItems" :key="item.name">{{ item.name }}</li>
+      </ul>
+
+      <button class="btn bg-red-200 p-2" @click="prev" :disabled="currentPage <= 1">Previous</button>
+      <span>Page {{ currentPage }} of {{ totalPages }}</span>
+      <button class="btn bg-red-200 p-2" @click=" next" :disabled="currentPage >= totalPages">Next</button>
+    </div>
+  </div>
+
 
 </body>
 
