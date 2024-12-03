@@ -42,6 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     },
     methods: {
+      // 下一頁
       next() {
         // Move to the next page if it's not the last page
         if (this.currentPage < this.totalPages) {
@@ -49,6 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
           this.updatePageInUrl();
         }
       },
+      // 上一頁
       prev() {
         // Move to the previous page if it's not the first page
         if (this.currentPage > 1) {
@@ -56,18 +58,21 @@ document.addEventListener("DOMContentLoaded", () => {
           this.updatePageInUrl();
         }
       },
+      // 取得現在頁碼
       getCurrentPage() {
         const urlParams = new URLSearchParams(window.location.search);
         return parseInt(urlParams.get('page') || 1, 10); // Default to page 1 if not present
       },
+      // 更新頁面
       updatePage(pageNum) {
         const totalPages = this.totalPages;
         this.currentPage = Math.max(1, Math.min(pageNum, totalPages)); // Ensure page number is within bounds
         this.updatePageInUrl();
       },
+      // 更新頁面 Url
       updatePageInUrl() {
         // Update the URL to reflect the current page number
-        const urlParams = new URLSearchParams(window.location.search);
+        const urlParams = new URLSearchParams(window.location.search); // 將參數存在 url 用以判斷當前頁碼
         urlParams.set('page', this.currentPage);
         window.history.pushState({}, '', `${window.location.pathname}?${urlParams}`);
       }
