@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log(this.text);
         this.updatePage(this.currentPage); // Set the page correctly when the app is mounted
       }
-    };
-
-    createApp(config).mount('#vueApp');
-  });
+    }
+  }
+  createApp(config).mount('#vueApp')
+});
