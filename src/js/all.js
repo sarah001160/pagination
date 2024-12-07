@@ -1,13 +1,3 @@
-// tailwind.config = {
-//   theme: {
-//     extend: {
-//       colors: {
-//         clifford: '#da373d',
-//       }
-//     }
-//   }
-// }
-
 document.addEventListener("DOMContentLoaded", () => {
   const { createApp } = Vue;
   const config = {
@@ -31,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     computed: {
       totalPages() {
+        this.totalItems = this.array.length;
         return Math.ceil(this.totalItems / this.sizePerPage); // 總共頁數 = 全部項目 / 每頁筆數
       },
       paginatedItems() {
