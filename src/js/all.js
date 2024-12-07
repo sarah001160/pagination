@@ -1,12 +1,12 @@
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        clifford: '#da373d',
-      }
-    }
-  }
-}
+// tailwind.config = {
+//   theme: {
+//     extend: {
+//       colors: {
+//         clifford: '#da373d',
+//       }
+//     }
+//   }
+// }
 
 document.addEventListener("DOMContentLoaded", () => {
   const { createApp } = Vue;

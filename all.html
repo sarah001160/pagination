@@ -5,14 +5,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link href="dist/style.css" rel="stylesheet">
   <!-- Vue.js @3 -->
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <!-- TailwindCSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="all.js"></script>
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+  <script src="src/js/all.js"></script>
 </head>
 
 <body>
+  <h1 class="text-3xl font-bold underline text-red-700">
+    Hello world!
+  </h1>
   <h1>分頁功能</h1>
   <!-- <section id="vueApp">
     <div class="p-10">
@@ -37,7 +41,7 @@
 
       <button class="btn bg-red-200 p-2" @click="prev" :disabled="currentPage <= 1">Previous</button>
       <span>Page {{ currentPage }} of {{ totalPages }}</span>
-      <button class="btn bg-red-200 p-2" @click=" next" :disabled="currentPage >= totalPages">Next</button>
+      <button class="btn bg-red-200 p-2" @click="next" :disabled="currentPage >= totalPages">Next</button>
     </div>
   </div>
 
