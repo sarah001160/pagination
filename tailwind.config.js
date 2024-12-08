@@ -8,5 +8,9 @@ module.exports = {
       }
     }
   },
-  plugins: [],
+  plugins: [
+    require('daisyui'),
+  ],
 }
+
+/* DaisyUI: https://daisyui.com/docs/install/ */
