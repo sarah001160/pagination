@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="dist/style.css" rel="stylesheet">
+  <!-- Vue.js @3 -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <!-- TailwindCSS -->
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+  <script src="src/js/all.js"></script>
+</head>
+
+<body>
+  <section id="vueApp" class="container mx-auto p-10">
+    <h1 class="text-3xl font-bold underline text-red-700">
+      Hello world!
+    </h1>
+    <h1>分頁功能</h1>
+    <ol class="ol">
+      <li>1</li>
+      <li>2</li>
+    </ol>
+    <ul class="list-disc">
+      <li>8888</li>
+    </ul>
+    <div>
+      <div>
+        <ul>
+          <li v-for="item in paginatedItems" :key="item.name">{{ item.name }}</li>
+        </ul>
+
+        <button class="btn bg-red-200 p-2" @click="prev" :disabled="currentPage <= 1">Previous</button>
+        <span>Page {{ currentPage }} of {{ totalPages }}</span>
+        <button class="btn bg-red-200 p-2" @click="next" :disabled="currentPage >= totalPages">Next</button>
+      </div>
+
+
+      <ol class="list-decimal">
+        <li>請把DaistUI裝進</li>
+        <li>用DaisyUI的分頁介面</li>
+        <li>試著將 JS 串接到 UI</li>
+      </ol>
+      <ol class="list-decimal">
+        <li>Now this is a story all about how, my life got flipped-turned upside down</li>
+        <!-- ... -->
+      </ol>
+
+
+    </div>
+
+
+  </section>
+
+
+</body>
+
+</html>
