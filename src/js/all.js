@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     data() {
       return {
         text: 'hello',
+        selectedOption: '1',// 目前頁面
         array: [
           { name: '資料1' },
           { name: '資料2' },
@@ -12,7 +13,9 @@ document.addEventListener("DOMContentLoaded", () => {
           { name: '資料5' },
           { name: '資料6' },
           { name: '資料7' },
-          { name: '資料8' }
+          { name: '資料8' },
+          { name: '資料9' },
+          { name: '資料10' }
         ],
         currentPage: 1, // 
         totalItems: 0, // Total number of items (length of the array)

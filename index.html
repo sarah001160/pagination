@@ -15,46 +15,37 @@
 
 <body>
   <section id="vueApp" class="container mx-auto p-10">
-    <h1 class="text-3xl font-bold underline text-red-700">
-      Hello world!
-    </h1>
     <h1>分頁功能</h1>
-    <ol class="ol">
-      <li>1</li>
-      <li>2</li>
-    </ol>
-    <ul class="list-disc">
-      <li>8888</li>
-    </ul>
     <div>
-      <div>
-        <ul>
-          <li v-for="item in paginatedItems" :key="item.name">{{ item.name }}</li>
-        </ul>
-
-        <button class="btn bg-red-200 p-2" @click="prev" :disabled="currentPage <= 1">Previous</button>
-        <span>Page {{ currentPage }} of {{ totalPages }}</span>
-        <button class="btn bg-red-200 p-2" @click="next" :disabled="currentPage >= totalPages">Next</button>
+      <ul>
+        <li v-for="item in paginatedItems" :key="item.name">{{ item.name }}</li>
+      </ul>
+    </div>
+    <!-- 分頁 DaisyUI -->
+    <div>
+      <div>第{{ currentPage }}頁 (總共{{ totalPages }}頁)</div>
+      <div class="join">
+        <button class="join-item btn btn-outline" @click="prev" :disabled="currentPage <= 1">
+          < </button>
+            <input type="radio" v-for="i in totalPages" :key="i" class="join-item btn btn-square" name="options"
+              :value="`${i}`" v-model=" selectedOption" @click="updatePage(i)" :aria-label="i"
+              :checked="currentPage == i" />
+            <button class="join-item btn btn-outline" @click="next" :disabled="currentPage >= totalPages">></button>
       </div>
-
-
-      <ol class="list-decimal">
-        <li>請把DaistUI裝進</li>
-        <li>用DaisyUI的分頁介面</li>
-        <li>試著將 JS 串接到 UI</li>
-      </ol>
-      <ol class="list-decimal">
-        <li>Now this is a story all about how, my life got flipped-turned upside down</li>
-        <!-- ... -->
-      </ol>
-
-
     </div>
 
+    <div class="divider"></div>
 
+    <ol class="list-decimal">
+      <li>請把DaistUI裝進</li>
+      <li>用DaisyUI的分頁介面</li>
+      <li>試著將 JS 串接到 UI</li>
+    </ol>
+    <ol class="list-decimal">
+      <li>Now this is a story all about how, my life got flipped-turned upside down</li>
+      <!-- ... -->
+    </ol>
   </section>
-
-
 </body>
 
 </html>
