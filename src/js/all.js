@@ -1,3 +1,4 @@
+// 監聽頁面載入並 initialize
 document.addEventListener("DOMContentLoaded", () => {
   const { createApp } = Vue;
   const config = {
