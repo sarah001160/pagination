@@ -24,11 +24,11 @@
       <div>第{{ currentPage }}頁 (總共{{ totalPages }}頁)</div>
       <div class="join">
         <button class="join-item btn btn-outline" @click="prev" :disabled="currentPage <= 1">
-          < </button>
-            <input type="radio" v-for="i in totalPages" :key="i" class="join-item btn btn-square" name="options"
-              :value="`${i}`" v-model=" selectedOption" @click="updatePage(i)" :aria-label="i"
-              :checked="currentPage == i" />
-            <button class="join-item btn btn-outline" @click="next" :disabled="currentPage >= totalPages">></button>
+          prev </button>
+        <input type="radio" v-for="i in totalPages" :key="i" class="join-item btn btn-square" name="options"
+          :value="`${i}`" v-model=" selectedOption" @click="updatePage(i)" :aria-label="i"
+          :checked="currentPage == i" />
+        <button class="join-item btn btn-outline" @click="next" :disabled="currentPage >= totalPages">next</button>
       </div>
     </div>
 

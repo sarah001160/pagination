@@ -4,8 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const config = {
     data() {
       return {
-        text: 'hello',
-        selectedOption: '1',// 目前頁面
         array: [
           { name: '資料1' },
           { name: '資料2' },
@@ -78,7 +76,6 @@ document.addEventListener("DOMContentLoaded", () => {
       mounted() {
         this.totalItems = this.array.length;
         this.currentPage = this.getCurrentPage(); // Get the page from the URL on page load
-        console.log(this.text);
         this.updatePage(this.currentPage); // Set the page correctly when the app is mounted
       }
     }
